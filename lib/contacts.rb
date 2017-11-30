@@ -5,6 +5,7 @@ class Contact
   attr_accessor :job_title
   attr_accessor :company
   attr_accessor :contact_type
+  attr_accessor :address
   attr_reader :id
 
 
@@ -14,6 +15,7 @@ class Contact
     @job_title = attributes.fetch(:job_title)
     @company = attributes.fetch(:company)
     @contact_type = attributes.fetch(:contact_type)
+    @address = []
     @id = @@list.length + 1
   end
 
@@ -38,10 +40,12 @@ class Contact
     end
   end
 
-
   def self.sort()
     @@list.sort_by{ |item| item.last_name }
   end
 
+  def add_address(address)
+    @address.push(address)
+  end
 
 end

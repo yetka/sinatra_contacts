@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
 require('./lib/contacts')
+require('./lib/address')
 require('pry')
 
 get('/') do
@@ -9,7 +10,7 @@ get('/') do
   erb(:list)
 end
 
-post('/') do
+post('/output1') do
   first_name = params["first_name"]
   last_name = params["last_name"]
   job_title = params["job_title"]
@@ -25,4 +26,16 @@ end
 get('/contact/:id') do
   @contact = Contact.find(params[:id])
   erb(:contact)
+end
+
+post('/output_address') do
+  @list = Contact.all()
+  # street = params["street"]
+  # city = params["city"]
+  # state = params["state"]
+  # zip = params["zip"]
+  #
+  # address = Address.new({:street=> street, :city=> city, :state=> state, :zip=> zip})
+  # # @contact.add_address(address)
+  erb(:list)
 end

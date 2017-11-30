@@ -3,10 +3,11 @@
 <h4>Job Title: <%= @contact.job_title() %></h4>
 <h4>Company: <%= @contact.company() %></h4>
 <h4>Contact Type: <%= @contact.contact_type() %></h4>
+<h4>Address: <%= @contact.address() %></h4>
 
 
 
-<form action="/" method="post">
+<form action="/output_address" method="post">
   <h3>Add address to the contact</h3>
   <div class="form-group">
     <label for="street">Street Address </label>
