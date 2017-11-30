@@ -1,1 +1,28 @@
-<h1><%= @contact.last_name %></h1>
+<h2><%= @contact.first_name() %></h2>
+<h1><%= @contact.last_name() %></h1>
+<h4>Job Title: <%= @contact.job_title() %></h4>
+<h4>Company: <%= @contact.company() %></h4>
+<h4>Contact Type: <%= @contact.contact_type() %></h4>
+
+
+
+<form action="/" method="post">
+  <h3>Add address to the contact</h3>
+  <div class="form-group">
+    <label for="street">Street Address </label>
+    <input id="street" name="street" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="city">City </label>
+    <input id="city" name="city" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="state">State</label>
+    <input id="state" name="state" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="zip">Zip Code</label>
+    <input id="zip" name="zip" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Add!</button>
+</form>
