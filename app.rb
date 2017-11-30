@@ -30,12 +30,12 @@ end
 
 post('/output_address') do
   @list = Contact.all()
-  # street = params["street"]
-  # city = params["city"]
-  # state = params["state"]
-  # zip = params["zip"]
-  #
-  # address = Address.new({:street=> street, :city=> city, :state=> state, :zip=> zip})
-  # # @contact.add_address(address)
+  street = params["street"]
+  city = params["city"]
+  state = params["state"]
+  zip = params["zip"]
+
+  address = Address.new({:street=> street, :city=> city, :state=> state, :zip=> zip})
+  @contact.add_address(address)
   erb(:list)
 end
