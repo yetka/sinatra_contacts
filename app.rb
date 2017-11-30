@@ -28,12 +28,15 @@ get('/contact/:id') do
   erb(:contact)
 end
 
-post('/output_address') do
+post('/contact/:id') do
   @list = Contact.all()
+
+  @contact = Contact.find(params[:id])
   street = params["street"]
   city = params["city"]
   state = params["state"]
   zip = params["zip"]
+
 
   address = Address.new({:street=> street, :city=> city, :state=> state, :zip=> zip})
   @contact.add_address(address)
